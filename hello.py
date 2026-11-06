@@ -16,9 +16,15 @@ def add(a: int, b: int) -> int:
     return a + b
 
 
+def multiply(a: int, b: int) -> int:
+    """返回两数之积。"""
+    return a * b
+
+
 def main() -> None:
     print(greet())
     print(f"2 + 3 = {add(2, 3)}")
+    print(f"3 * 4 = {multiply(3, 4)}")
 
 
 if __name__ == "__main__":
