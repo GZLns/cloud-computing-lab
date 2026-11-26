@@ -49,6 +49,31 @@ python hello.py --name 罗子俊 --a 7 --b 6
 7 与 6 的平均值 = 6.50
 ```
 
+## 实验步骤与命令记录
+
+```bash
+# 1. 配置提交身份
+git config --global user.name  "GZLns"
+git config --global user.email "13425121993@163.com"
+
+# 2. 本地初始化并与远程仓库关联
+git init
+git remote add origin https://github.com/GZLns/cloud-computing-lab.git
+
+# 3. 首次提交与推送
+git add .
+git commit -m "feat: 初始化仓库，添加 README 与 hello.py"
+git push -u origin main
+
+# 4. 修改代码后再次提交推送
+git add .
+git commit -m "feat: 新增 multiply 函数并补充 README 输出示例"
+git push
+
+# 5. 查看提交历史
+git log --oneline
+```
+
 ## 本次实验完成的事情
 
 1. 在 GitHub 上创建远程仓库 `cloud-computing-lab`
@@ -62,6 +87,5 @@ python hello.py --name 罗子俊 --a 7 --b 6
 - Windows 下 Git 提示 `LF will be replaced by CRLF`：属于换行符自动转换提示，不是错误；
   需要保持文件原样时可用 `git config core.autocrlf input`。
 - 首次推送需要指定上游分支，使用 `git push -u origin main` 之后即可简写为 `git push`。
-- 在终端运行时若中文显示为乱码，说明控制台代码页不是 UTF-8：
-  PowerShell 下执行 `chcp 65001` 即可恢复正常；源文件同时保留 `# -*- coding: utf-8 -*-`，
-  保证解释器按 UTF-8 读取。
+- `git add .` 会连同新文件一起暂存，提交前先跑一次 `git status` 确认暂存内容，
+  可以避免把无关文件误提交上去。
