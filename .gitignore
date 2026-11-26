@@ -1,0 +1,7 @@
+# Python 运行时缓存
+__pycache__/
+*.py[cod]
+
+# 编辑器
+.vscode/
+.idea/
